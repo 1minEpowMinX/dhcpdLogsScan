@@ -1,11 +1,14 @@
 import pandas as pd
+from os import path
+
+current_dir = path.dirname(__file__)
 
 # Файл логов DHCP-сервера
-LOG_FILE = r"path\to\dhcpd.log"
+LOG_FILE = path.join(current_dir, "dhcpd.log")
 # Файл обработанных MAC-адресов
-PROCESSED_MACS_FILE = r"path\to\MACs.csv"
+PROCESSED_MACS_FILE = path.join(current_dir, "MACs.csv")
 # Файл новых MAC-адресов
-NEW_MACS_FILE = r"path\to\new_macs.txt"
+NEW_MACS_FILE = path.join(current_dir, "new_macs.txt")
 # Список обработанных MAC-адресов из CSV
 processed_macs_from_file = []
 # Список обработанных MAC-адресов из логов
