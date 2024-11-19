@@ -1,6 +1,7 @@
 import pandas as pd
 from os import path
 
+# Путь к текущей директории
 current_dir = path.dirname(__file__)
 
 # Файл логов DHCP-сервера
