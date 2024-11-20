@@ -1,8 +1,12 @@
 import pandas as pd
 from os import path
+import sys
 
-# Путь к текущей директории
-current_dir = path.dirname(__file__)
+# Определение директории, где находится текущий исполняемый файл
+if getattr(sys, 'frozen', False):  # Проверка, если скрипт заморожен в exe
+    current_dir = path.dirname(sys.executable)
+else:
+    current_dir = path.dirname(path.abspath(__file__))
 
 # Файл логов DHCP-сервера
 LOG_FILE = path.join(current_dir, "dhcpd.log")
